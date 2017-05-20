@@ -1,6 +1,7 @@
 defmodule Ditto.Bot do
   use Slack
 
+  def handle_event(_message= %{type: "message", subtype: _}, _slack, state), do: {:ok, state}
   def handle_event(message = %{type: "message"}, slack, state) do
     if length(state) == 0 do
       state = set_state()

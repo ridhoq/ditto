@@ -4,7 +4,6 @@ defmodule Ditto do
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
 
-    # TODO: change this to pull from env variable
     slack_token = Application.get_env(:ditto, :slack_token)
     redis_url = Application.get_env(:ditto, :redis_url)
 
