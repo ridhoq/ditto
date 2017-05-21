@@ -103,7 +103,7 @@ defmodule Ditto.Bot do
     if Enum.member?(hd(state), user_id) do
       lex_key = "lex:" <> user_id
       {:ok, lex} = Redix.command(:redix, ["LRANGE", lex_key, "0", "-1"])
-      if len(lex) >= 50 do
+      if length(lex) >= 50 do
         {:ok, chain} = Faust.generate_chain(Enum.join(lex, " "), 2)
         {:ok, text} = Faust.traverse(chain, len)
         IO.puts("transform generated for #{lookup_user_name(message.user, slack)} (#{user_id}): {text}")
