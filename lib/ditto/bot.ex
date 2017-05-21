@@ -117,7 +117,7 @@ defmodule Ditto.Bot do
         lex_key = "lex:" <> user_id
         {:ok, lex} = Redix.command(:redix, ["LRANGE", lex_key, "0", "-1"])
         if length(lex) >= 50 do
-          {:ok, chain} = Enum.join(lex, " ") |> String.downcase |> Faust.generate_chain(2)
+          {:ok, chain} = Enum.join(lex, " ") |> Faust.generate_chain(2)
           {:ok, text} = Faust.traverse(chain, len)
           IO.puts("transform generated for #{lookup_user_name(message.user, slack)} (#{user_id}): #{text}")
           send_message(text, message.channel, slack)
