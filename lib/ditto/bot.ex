@@ -106,7 +106,7 @@ defmodule Ditto.Bot do
       if length(lex) >= 50 do
         {:ok, chain} = Faust.generate_chain(Enum.join(lex, " "), 2)
         {:ok, text} = Faust.traverse(chain, len)
-        IO.puts("transform generated for #{lookup_user_name(message.user, slack)} (#{user_id}): {text}")
+        IO.puts("transform generated for #{lookup_user_name(message.user, slack)} (#{user_id}): #{text}")
         send_message(text, message.channel, slack)
       else
         text = "#{at(message.user)}: #{at(user_id)} needs to send #{50 - length(lex)} more messages before ditto can transform"
