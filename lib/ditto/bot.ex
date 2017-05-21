@@ -103,10 +103,16 @@ defmodule Ditto.Bot do
     if Enum.member?(hd(state), user_id) do
       lex_key = "lex:" <> user_id
       {:ok, lex} = Redix.command(:redix, ["LRANGE", lex_key, "0", "-1"])
-      {:ok, chain} = Faust.generate_chain(Enum.join(lex, " "), 2)
-      {:ok, text} = Faust.traverse(chain, len)
-      IO.inspect text
-      send_message(text, message.channel, slack)
+      if len(lex) >= 50 do
+        {:ok, chain} = Faust.generate_chain(Enum.join(lex, " "), 2)
+        {:ok, text} = Faust.traverse(chain, len)
+        IO.puts("transform generated for #{lookup_user_name(message.user, slack)} (#{user_id}): {text}")
+        send_message(text, message.channel, slack)
+      else
+        text = "#{at(message.user): you need to send more messages before ditto can transform"
+        IO.puts(text)
+        send_message(text, message.channel, slack)
+      end
     else
       text = "#{at(message.user)}: user not enabled for transform or not found"
       send_message(text, message.channel, slack)
