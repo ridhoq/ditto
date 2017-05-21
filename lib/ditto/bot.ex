@@ -97,25 +97,38 @@ defmodule Ditto.Bot do
         [user] ->
           {get_user_id(user, slack), 25}
         [user, len] ->
-          {get_user_id(user, slack), String.to_integer(len)}
+          len_val =
+            case Integer.parse(len) do
+              {val, ""} ->
+                val
+              :error ->
+                nil
+            end
+          {get_user_id(user, slack), len_val}
         _ -> {nil, nil}
       end
-    if Enum.member?(hd(state), user_id) do
-      lex_key = "lex:" <> user_id
-      {:ok, lex} = Redix.command(:redix, ["LRANGE", lex_key, "0", "-1"])
-      if length(lex) >= 50 do
-        {:ok, chain} = Faust.generate_chain(Enum.join(lex, " "), 2)
-        {:ok, text} = Faust.traverse(chain, len)
-        IO.puts("transform generated for #{lookup_user_name(message.user, slack)} (#{user_id}): #{text}")
+
+    cond do
+      len == nil ->
+        text = "#{at(message.user)}: invalid argument for transform length"
         send_message(text, message.channel, slack)
-      else
-        text = "#{at(message.user)}: #{at(user_id)} needs to send #{50 - length(lex)} more messages before ditto can transform"
-        IO.puts(text)
+        state
+      Enum.member?(hd(state), user_id) ->
+        lex_key = "lex:" <> user_id
+        {:ok, lex} = Redix.command(:redix, ["LRANGE", lex_key, "0", "-1"])
+        if length(lex) >= 50 do
+          {:ok, chain} = Faust.generate_chain(Enum.join(lex, " "), 2)
+          {:ok, text} = Faust.traverse(chain, len)
+          IO.puts("transform generated for #{lookup_user_name(message.user, slack)} (#{user_id}): #{text}")
+          send_message(text, message.channel, slack)
+        else
+          text = "#{at(message.user)}: #{at(user_id)} needs to send #{50 - length(lex)} more messages before ditto can transform"
+          IO.puts(text)
+          send_message(text, message.channel, slack)
+        end
+      true ->
+        text = "#{at(message.user)}: user not enabled for transform or not found"
         send_message(text, message.channel, slack)
-      end
-    else
-      text = "#{at(message.user)}: user not enabled for transform or not found"
-      send_message(text, message.channel, slack)
     end
     state
   end
