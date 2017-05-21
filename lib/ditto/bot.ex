@@ -103,7 +103,7 @@ defmodule Ditto.Bot do
     if Enum.member?(hd(state), user_id) do
       lex_key = "lex:" <> user_id
       {:ok, lex} = Redix.command(:redix, ["LRANGE", lex_key, "0", "-1"])
-      {:ok, chain} = Faust.generate_chain(Enum.join(lex, " "), 3)
+      {:ok, chain} = Faust.generate_chain(Enum.join(lex, " "), 2)
       {:ok, text} = Faust.traverse(chain, len)
       IO.inspect text
       send_message(text, message.channel, slack)
