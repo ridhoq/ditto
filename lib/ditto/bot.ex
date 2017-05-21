@@ -109,7 +109,7 @@ defmodule Ditto.Bot do
         IO.puts("transform generated for #{lookup_user_name(message.user, slack)} (#{user_id}): {text}")
         send_message(text, message.channel, slack)
       else
-        text = "#{at(message.user)}: you need to send more messages before ditto can transform"
+        text = "#{at(message.user)}: #{at(user_id)} needs to send #{50 - length(lex)} more messages before ditto can transform"
         IO.puts(text)
         send_message(text, message.channel, slack)
       end
