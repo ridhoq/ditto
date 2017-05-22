@@ -101,7 +101,11 @@ defmodule Ditto.Bot do
           len_val =
             case Integer.parse(len) do
               {val, ""} ->
-                val
+                if val > 100 or val < 1 do
+                  nil
+                else
+                  val
+                 end
               :error ->
                 nil
             end
