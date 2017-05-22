@@ -27,6 +27,7 @@ defmodule Ditto.Bot do
             handle_transform(args, message, slack, state)
           _ ->
             IO.puts "invalid command: #{command}"
+            state
         end
     else
       [lex_enabled | _tail] = state
