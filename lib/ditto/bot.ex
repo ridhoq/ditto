@@ -7,7 +7,7 @@ defmodule Ditto.Bot do
       state = set_state()
     end
 
-    split_msg = String.trim(message.text) |> String.split(" ")
+    split_msg = String.trim(message.text) |> String.downcase |> String.split(" ")
     first_word = hd(split_msg)
     if (first_word == at(slack.me.id) or String.downcase(first_word) == slack.me.name) do
       command_with_args = tl(split_msg)
