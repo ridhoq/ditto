@@ -9,7 +9,7 @@ defmodule Ditto.Bot do
 
     split_msg = String.trim(message.text) |> String.downcase |> String.split(" ")
     first_word = hd(split_msg)
-    if (first_word == at(slack.me.id) or String.downcase(first_word) == slack.me.name) do
+    if (first_word == at(slack.me.id) or first_word == slack.me.name) do
       command_with_args = tl(split_msg)
       command = hd(command_with_args) |> String.downcase
       args = tl(command_with_args)
@@ -124,6 +124,7 @@ defmodule Ditto.Bot do
         if length(lex) >= 50 do
           {:ok, chain} = Enum.join(lex, " ") |> Faust.generate_chain(2)
           {:ok, text} = Faust.traverse(chain, len)
+          text = sanitize(text, slack)
           IO.puts("transform generated for #{lookup_user_name(message.user, slack)} (#{user_id}): #{text}")
           send_message(text, message.channel, slack)
         else
@@ -156,6 +157,17 @@ defmodule Ditto.Bot do
   end
 
   def at(user_id), do: "<@#{user_id}>"
+
+  def sanitize(text, slack) do
+    Regex.replace(~r/<(.+?)>/, text, fn _, x -> String.trim(x, "@") |> lookup_user_name(slack) |> half_to_full end)
+  end
+
+  def half_to_full(text) do
+    half_width = String.graphemes("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!\"#$%&()*+,-./:;<=>?@[]^_`{|}~`")
+    full_width = String.graphemes("０１２３４５６７８９ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ！゛＃＄％＆（）＊＋、ー。／：；〈＝〉？＠［］＾＿‘｛｜｝～")
+    half_to_full = Enum.zip(half_width, full_width) |> Enum.into(%{})
+    String.graphemes(text) |> Enum.map(fn(c) -> half_to_full[c] end) |> Enum.join
+  end
 
   def typeof(self) do
       cond do
