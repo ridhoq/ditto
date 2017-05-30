@@ -159,7 +159,11 @@ defmodule Ditto.Bot do
   def at(user_id), do: "<@#{user_id}>"
 
   def sanitize(text, slack) do
-    Regex.replace(~r/<(.+?)>/, text, fn _, x -> String.trim(x, "@") |> lookup_user_name(slack) |> half_to_full end)
+    Regex.replace(~r/<@(\S+?)>/, text, fn _, x ->
+      String.trim(x, "@") |>
+      lookup_user_name(slack) |>
+      half_to_full
+    end)
   end
 
   def half_to_full(text) do
