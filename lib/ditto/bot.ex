@@ -144,7 +144,7 @@ defmodule Ditto.Bot do
     user_id =
       case length(matches) do
         n when n > 0 ->
-          matches |> List.flatten |> tl |> hd
+          matches |> List.flatten |> tl |> hd |> String.upcase
         _ -> lookup_user_id("@" <> user, slack)
       end
     user_id
