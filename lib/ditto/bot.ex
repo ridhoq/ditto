@@ -159,12 +159,23 @@ defmodule Ditto.Bot do
   def at(user_id), do: "<@#{user_id}>"
 
   def sanitize(text, slack) do
-    Regex.replace(~r/<@(\S+?)>/, text, fn _, x ->
-      String.trim(x, "@") |>
-      lookup_user_name(slack) |>
-      half_to_full
-    end)
+    String.split(text) |>
+    Enum.map(
+      fn(word) ->
+        word =
+          case word do
+            "<@" <> _rest -> strip_tag(word, "@") |> lookup_user_name(slack) |> half_to_full
+            "<!" <> _rest -> strip_tag(word) |> half_to_full()
+            _ -> if lookup_user_id("@" <> word, slack) != nil, do: half_to_full(word), else: word
+          end
+        word
+      end
+    ) |>
+    Enum.join(" ")
   end
+
+  def strip_tag(text), do: String.trim(text, "<") |> String.trim(">")
+  def strip_tag(text, char), do: String.trim(text, "<" <> char) |> String.trim(">")
 
   def half_to_full(text) do
     half_width = String.graphemes("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!\"#$%&()*+,-./:;<=>?@[]^_`{|}~`")
