@@ -1,0 +1,3 @@
+FROM ridhoq/ditto
+
+RUN mix compile
