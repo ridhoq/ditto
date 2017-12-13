@@ -1,19 +1,20 @@
 # Ditto
 
-**TODO: Add description**
-
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `ditto` to your list of dependencies in `mix.exs`:
+`cp .env.example .env`
 
-```elixir
-def deps do
-  [{:ditto, "~> 0.1.0"}]
-end
-```
+Then change the .env contents to the proper values.
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/ditto](https://hexdocs.pm/ditto).
+`docker-compose build`
+
+then run:
+
+`docker-compose up`
+
+## Deploy to heroku
+
+https://devcenter.heroku.com/articles/container-registry-and-runtime#pushing-an-image-s
+
+`heroku container:push worker`
 
