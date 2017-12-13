@@ -9,7 +9,8 @@ defmodule Ditto.Bot do
 
     split_msg = String.trim(message.text) |> String.downcase |> String.split(" ")
     first_word = hd(split_msg)
-    if (first_word == at(slack.me.id) or first_word == slack.me.name) do
+
+    if (has_ditto_been_invoked(first_word, slack.me)) do
       command_with_args = tl(split_msg)
       command = hd(command_with_args) |> String.downcase
       args = tl(command_with_args)
@@ -39,6 +40,11 @@ defmodule Ditto.Bot do
     {:ok, state}
   end
   def handle_event(_, _, state), do: {:ok, state}
+
+  def has_ditto_been_invoked(first_word, ditto) do
+    # we upcase here to ensure the user id will match since we downcased the message text earlier
+    String.upcase(first_word) == at(ditto.id) or first_word == ditto.name
+  end
 
   def set_state() do
     {:ok, retval} = Redix.command(:redix, ["SMEMBERS", "lex-enabled"])
