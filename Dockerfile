@@ -6,8 +6,6 @@ WORKDIR /home/ditto
 
 CMD ["mix", "run", "--no-halt"]
 
-#ENV MIX_HOME /home/ditto/.mix
-
 RUN mix local.hex --force && \
     mix local.rebar --force
 
