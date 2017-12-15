@@ -1,17 +1,21 @@
 FROM elixir:1.4
 
-WORKDIR /ditto
+RUN useradd -ms /bin/bash ditto
+USER ditto
+WORKDIR /home/ditto
 
 CMD ["mix", "run", "--no-halt"]
+
+#ENV MIX_HOME /home/ditto/.mix
 
 RUN mix local.hex --force && \
     mix local.rebar --force
 
-COPY mix.exs /ditto/mix.exs
-COPY mix.lock /ditto/mix.lock
+COPY mix.exs /home/ditto/mix.exs
+COPY mix.lock /home/ditto/mix.lock
 
 RUN mix deps.get
 
-COPY lib /ditto/lib
-COPY config /ditto/config
-COPY test /ditto/test
+COPY lib /home/ditto/lib
+COPY config /home/ditto/config
+COPY test /home/ditto/test
