@@ -1,4 +1,4 @@
-defmodule DittoTest do
+defmodule BotTest do
   use ExUnit.Case
   doctest Ditto
 

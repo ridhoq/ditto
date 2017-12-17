@@ -14,6 +14,4 @@ COPY mix.lock /home/ditto/mix.lock
 
 RUN mix deps.get
 
-COPY lib /home/ditto/lib
-COPY config /home/ditto/config
-COPY test /home/ditto/test
+COPY apps/bot /home/ditto/apps/bot

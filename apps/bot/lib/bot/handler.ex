@@ -1,4 +1,4 @@
-defmodule Ditto.Bot do
+defmodule Bot.Handler do
   use Slack
 
   def handle_event(_message= %{type: "message", subtype: _}, _slack, state), do: {:ok, state}

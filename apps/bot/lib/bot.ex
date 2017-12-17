@@ -1,4 +1,4 @@
-defmodule Ditto do
+defmodule Bot do
   use Application
 
   def start(_type, _args) do
@@ -9,10 +9,10 @@ defmodule Ditto do
 
     children = [
       worker(Redix, [redis_url, [name: :redix]]),
-      worker(Slack.Bot, [Ditto.Bot, [], slack_token])
+      worker(Slack.Bot, [Bot.Handler, [], slack_token])
     ]
 
-    opts = [strategy: :one_for_one, name: Ditto.Supervisor]
+    opts = [strategy: :one_for_one, name: Bot.Supervisor]
     {:ok, _pid} = Supervisor.start_link(children, opts)
   end
 end
