@@ -5,13 +5,32 @@ services:
     ports:
       - 6379:6379
   bot:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile.bot
     env_file: .env
     volumes:
       - ./config:/ditto/config
-      - ./lib:/ditto/lib
+      - ./apps/bot/lib:/ditto/apps/bot/lib
       - ./mix.exs:/ditto/mix.exs
       - ./mix.lock:/ditto/mix.lock
-      - ./test:/ditto/test
+      - ./apps/bot/test:/ditto/apps/bot/test
+      - ./apps/bot/mix.exs:/ditto/apps/bot/mix.exs
+    depends_on:
+      - redis
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    env_file: .env
+    ports: 
+      - 4000:4000
+    volumes:
+      - ./config:/ditto/config
+      - ./apps/bot/lib:/ditto/apps/bot/lib
+      - ./mix.exs:/ditto/mix.exs
+      - ./mix.lock:/ditto/mix.lock
+      - ./apps/bot/test:/ditto/apps/bot/test
+      - ./apps/bot/mix.exs:/ditto/apps/bot/mix.exs
     depends_on:
       - redis
