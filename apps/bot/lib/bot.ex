@@ -4,8 +4,8 @@ defmodule Bot do
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
 
-    slack_token = Application.get_env(:ditto, :slack_token)
-    redis_url = Application.get_env(:ditto, :redis_url)
+    slack_token = Application.get_env(:bot, :slack_token)
+    redis_url = Application.get_env(:bot, :redis_url)
 
     children = [
       worker(Redix, [redis_url, [name: :redix]]),
