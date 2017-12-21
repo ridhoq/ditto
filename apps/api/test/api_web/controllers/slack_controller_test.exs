@@ -9,14 +9,22 @@ defmodule ApiWeb.SlackControllerTest do
             type: "url_verification"
         }
 
-        response = conn
-        |> post(slack_path(conn, :handle_slack_event), body)
-        |> json_response(200)
+        response = 
+            conn
+            |> post(slack_path(conn, :handle_slack_event), body)
+            |> json_response(200)
 
-        inspect(body)
-        
         expected = %{"challenge" => challenge_str}
 
         assert response == expected
+    end
+
+    test "handle_slack_event/2 responds with 200 regardless of the event", %{conn: conn} do
+        body = %{}
+
+        _response = 
+            conn
+            |> post(slack_path(conn, :handle_slack_event), body)
+            |> response(200)
     end
 end

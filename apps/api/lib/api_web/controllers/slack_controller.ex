@@ -7,6 +7,8 @@ defmodule ApiWeb.SlackController do
             conn 
             |> put_resp_content_type("application/json")
             |> send_resp(200, Poison.encode!(%{challenge: params["challenge"]}))
+        else       
+            send_resp(conn, 200, "")
         end
     end
 end
