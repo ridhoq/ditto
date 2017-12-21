@@ -10,12 +10,12 @@ services:
       dockerfile: Dockerfile.bot
     env_file: .env
     volumes:
-      - ./config:/ditto/config
-      - ./apps/bot/lib:/ditto/apps/bot/lib
-      - ./mix.exs:/ditto/mix.exs
-      - ./mix.lock:/ditto/mix.lock
-      - ./apps/bot/test:/ditto/apps/bot/test
-      - ./apps/bot/mix.exs:/ditto/apps/bot/mix.exs
+      - ./config:/home/ditto/config
+      - ./apps/bot/lib:/home/ditto/apps/bot/lib
+      - ./mix.exs:/home/ditto/mix.exs
+      - ./mix.lock:/home/ditto/mix.lock
+      - ./apps/bot/test:/home/ditto/apps/bot/test
+      - ./apps/bot/mix.exs:/home/ditto/apps/bot/mix.exs
     depends_on:
       - redis
   api:
@@ -26,11 +26,11 @@ services:
     ports: 
       - 4000:4000
     volumes:
-      - ./config:/ditto/config
-      - ./apps/bot/lib:/ditto/apps/bot/lib
-      - ./mix.exs:/ditto/mix.exs
-      - ./mix.lock:/ditto/mix.lock
-      - ./apps/bot/test:/ditto/apps/bot/test
-      - ./apps/bot/mix.exs:/ditto/apps/bot/mix.exs
-    depends_on:
-      - redis
+      - ./config:/home/ditto/config
+      - ./apps/api/lib:/home/ditto/apps/api/lib
+      - ./mix.exs:/home/ditto/mix.exs
+      - ./mix.lock:/home/ditto/mix.lock
+      - ./apps/api/test:/home/ditto/apps/api/test
+      - ./apps/api/mix.exs:/home/ditto/apps/api/mix.exs
+    stdin_open: true
+    tty: true
