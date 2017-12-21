@@ -7,5 +7,7 @@ defmodule ApiWeb.Router do
 
   scope "/api", ApiWeb do
     pipe_through :api
+
+    post "/slack/events", SlackController, :handle_slack_event
   end
 end
