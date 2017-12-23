@@ -11,11 +11,11 @@ services:
     env_file: .env
     volumes:
       - ./config:/home/ditto/config
-      - ./apps/bot/lib:/home/ditto/apps/bot/lib
+      - ./apps/ditto_bot/lib:/home/ditto/apps/ditto_bot/lib
       - ./mix.exs:/home/ditto/mix.exs
       - ./mix.lock:/home/ditto/mix.lock
-      - ./apps/bot/test:/home/ditto/apps/bot/test
-      - ./apps/bot/mix.exs:/home/ditto/apps/bot/mix.exs
+      - ./apps/ditto_bot/test:/home/ditto/apps/ditto_bot/test
+      - ./apps/ditto_bot/mix.exs:/home/ditto/apps/ditto_bot/mix.exs
     depends_on:
       - redis
   api:
@@ -27,10 +27,10 @@ services:
       - 4000:4000
     volumes:
       - ./config:/home/ditto/config
-      - ./apps/api/lib:/home/ditto/apps/ditto_api/lib
+      - ./apps/ditto_api/lib:/home/ditto/apps/ditto_api/lib
       - ./mix.exs:/home/ditto/mix.exs
       - ./mix.lock:/home/ditto/mix.lock
-      - ./apps/api/test:/home/ditto/apps/ditto_api/test
-      - ./apps/api/mix.exs:/home/ditto/apps/ditto_api/mix.exs
+      - ./apps/ditto_api/test:/home/ditto/apps/ditto_api/test
+      - ./apps/ditto_api/mix.exs:/home/ditto/apps/ditto_api/mix.exs
     stdin_open: true
     tty: true
