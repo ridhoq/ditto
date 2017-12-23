@@ -27,10 +27,10 @@ services:
       - 4000:4000
     volumes:
       - ./config:/home/ditto/config
-      - ./apps/api/lib:/home/ditto/apps/api/lib
+      - ./apps/api/lib:/home/ditto/apps/ditto_api/lib
       - ./mix.exs:/home/ditto/mix.exs
       - ./mix.lock:/home/ditto/mix.lock
-      - ./apps/api/test:/home/ditto/apps/api/test
-      - ./apps/api/mix.exs:/home/ditto/apps/api/mix.exs
+      - ./apps/api/test:/home/ditto/apps/ditto_api/test
+      - ./apps/api/mix.exs:/home/ditto/apps/ditto_api/mix.exs
     stdin_open: true
     tty: true
