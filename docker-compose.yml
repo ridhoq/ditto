@@ -55,8 +55,6 @@ services:
     env_file: .env
     ports:
       - 9092:9092
-    environment:
-      - KAFKA_CREATE_TOPICS=${DITTO_KAFKA_TOPIC}
     depends_on:
       - zookeeper
   zookeeper:
