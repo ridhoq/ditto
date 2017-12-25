@@ -23,7 +23,7 @@ defmodule DittoApi.Mixfile do
   def application do
     [
       mod: {DittoApi.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :kafka_ex]
     ]
   end
 
@@ -39,7 +39,8 @@ defmodule DittoApi.Mixfile do
       {:phoenix, "~> 1.3.0"},
       {:phoenix_pubsub, "~> 1.0"},
       {:gettext, "~> 0.11"},
-      {:cowboy, "~> 1.0"}
+      {:cowboy, "~> 1.0"},
+      {:kafka_ex, "~> 0.8.1"}
     ]
   end
 end
