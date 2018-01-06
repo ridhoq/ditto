@@ -37,7 +37,6 @@ defmodule DittoBot.Mixfile do
         {:slack, "~> 0.11.0"},
         {:redix, "~> 0.6.0"},
         {:faust, "~> 0.1.0"},
-        {:rename, "~> 0.1.0", only: :dev}
       ]
     end
   end
