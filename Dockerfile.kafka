@@ -10,7 +10,7 @@ RUN mix local.hex --force && \
     mix local.rebar --force
 
 COPY --chown=ditto config/ /home/ditto/config/
-COPY --chown=ditto apps/ditto_util/ /home/ditto/apps/ditto_util/
+COPY --chown=ditto apps/ditto_kafka/ /home/ditto/apps/ditto_kafka/
 COPY --chown=ditto mix.exs /home/ditto/mix.exs 
 COPY --chown=ditto mix.lock /home/ditto/mix.lock
 

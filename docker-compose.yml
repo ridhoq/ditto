@@ -36,21 +36,21 @@ services:
       - kafka
     stdin_open: true
     tty: true
-  util:
+  kafka:
     build:
       context: .
-      dockerfile: Dockerfile.util
+      dockerfile: Dockerfile.kafka
     env_file: .env
     volumes:
         - ./config:/home/ditto/config
-        - ./apps/ditto_util/lib:/home/ditto/apps/ditto_util/lib
+        - ./apps/ditto_kafka/lib:/home/ditto/apps/ditto_kafka/lib
         - ./mix.exs:/home/ditto/mix.exs
         - ./mix.lock:/home/ditto/mix.lock
-        - ./apps/ditto_util/test:/home/ditto/apps/ditto_util/test
-        - ./apps/ditto_util/mix.exs:/home/ditto/apps/ditto_util/mix.exs
+        - ./apps/ditto_kafka/test:/home/ditto/apps/ditto_kafka/test
+        - ./apps/ditto_kafka/mix.exs:/home/ditto/apps/ditto_kafka/mix.exs
     depends_on:
-      - kafka
-  kafka:
+      - kafka_broker
+  kafka_broker:
     image: wurstmeister/kafka
     env_file: .env
     ports:

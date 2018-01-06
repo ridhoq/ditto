@@ -10,18 +10,18 @@ use Mix.Config
 
 # You can configure your application as:
 #
-#     config :ditto_util, key: :value
+#     config :ditto_kafka, key: :value
 #
 # and access this configuration in your application as:
 #
-#     Application.get_env(:ditto_util, :key)
+#     Application.get_env(:ditto_kafka, :key)
 #
 # You can also configure a 3rd-party app:
 #
 #     config :logger, level: :info
 #
 
-config :ditto_util, zookeeper_host: System.get_env("KAFKA_ZOOKEEPER_CONNECT")
+config :ditto_kafka, zookeeper_host: System.get_env("KAFKA_ZOOKEEPER_CONNECT")
 
 # It is also possible to import configuration files, relative to this
 # directory. For example, you can emulate configuration per environment

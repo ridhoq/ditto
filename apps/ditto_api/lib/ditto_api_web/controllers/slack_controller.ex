@@ -1,5 +1,7 @@
 defmodule DittoApiWeb.SlackController do
     use DittoApiWeb, :controller
+    use KafkaEx
+    alias KafkaEx.Protocol.Produce.Request, as: ProduceRequest
 
     def handle_slack_event(conn, params) do
         # handle url verification challenge
@@ -7,7 +9,10 @@ defmodule DittoApiWeb.SlackController do
             conn 
             |> put_resp_content_type("application/json")
             |> send_resp(200, Poison.encode!(%{challenge: params["challenge"]}))
-        else       
+        else
+            KafkaEx.produce(%ProduceRequest{
+              topic:
+            })
             send_resp(conn, 200, "")
         end
     end

@@ -1,7 +1,7 @@
 defmodule KafkaUtilTest do
   use ExUnit.Case
 
-  alias DittoUtil.KafkaUtil, as: KU
+  alias DittoKafka.KafkaUtil, as: KU
 
   test "gets kafka broker from zookeeper" do
     {:ok, brokers} = KU.get_kafka_brokers()

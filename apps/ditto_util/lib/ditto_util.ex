@@ -1,2 +1,0 @@
-defmodule DittoUtil do
-end
