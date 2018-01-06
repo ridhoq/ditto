@@ -4,9 +4,7 @@ defmodule KafkaUtilTest do
   alias DittoUtil.KafkaUtil, as: KU
 
   test "gets kafka broker from zookeeper" do
-    zookeeper_host = System.get_env("KAFKA_ZOOKEEPER_CONNECT")
-    IO.puts("#{zookeeper_host}")
-    {:ok, brokers} = KU.get_kafka_brokers(zookeeper_host)
+    {:ok, brokers} = KU.get_kafka_brokers()
 
     assert length(brokers) == 1
     

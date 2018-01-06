@@ -8,7 +8,8 @@ defmodule DittoUtil.KafkaUtil do
   @doc """
   Gets registered kafka brokers from zookeeper
   """
-  def get_kafka_brokers(zookeeper_host) do
+  def get_kafka_brokers() do
+    zookeeper_host = Application.get_env(:ditto_util, :zookeeper_host)
     {:ok, pid} = ZK.start_link(zookeeper_host)
     brokers_path = "/brokers/ids"
     broker_ids = ZK.get_children!(pid, brokers_path)
