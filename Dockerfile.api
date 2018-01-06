@@ -1,19 +1,7 @@
-FROM elixir:1.4
-
-RUN useradd -ms /bin/bash ditto
-USER ditto
-WORKDIR /home/ditto
-
-CMD ["mix", "phx.server"]
-
-RUN mix local.hex --force && \
-    mix local.rebar --force
+FROM ridhoq/ditto/base
 
 RUN mix archive.install https://github.com/phoenixframework/archives/raw/master/phx_new.ez --force
 
-COPY --chown=ditto config/ /home/ditto/config/
-COPY --chown=ditto apps/ditto_api/ /home/ditto/apps/ditto_api/
-COPY --chown=ditto mix.exs /home/ditto/mix.exs 
-COPY --chown=ditto mix.lock /home/ditto/mix.lock
+WORKDIR /home/ditto/apps/ditto_api
 
-RUN mix deps.get
+CMD ["mix", "phx.server"]

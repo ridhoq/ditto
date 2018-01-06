@@ -4,6 +4,11 @@ services:
     image: redis
     ports:
       - 6379:6379
+  base:
+    image: ridhoq/ditto/base
+    build:
+      context: .
+      dockerfile: Dockerfile.base
   bot:
     build:
       context: .

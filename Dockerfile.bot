@@ -1,17 +1,6 @@
-FROM elixir:1.4
+FROM ridhoq/ditto/base
 
-RUN useradd -ms /bin/bash ditto
-USER ditto
-WORKDIR /home/ditto
+WORKDIR /home/ditto/apps/ditto_bot
 
 CMD ["mix", "run", "--no-halt"]
 
-RUN mix local.hex --force && \
-    mix local.rebar --force
-
-COPY --chown=ditto config/ /home/ditto/config/
-COPY --chown=ditto apps/ditto_bot/ /home/ditto/apps/ditto_bot/
-COPY --chown=ditto mix.exs /home/ditto/mix.exs 
-COPY --chown=ditto mix.lock /home/ditto/mix.lock
-
-RUN mix deps.get
