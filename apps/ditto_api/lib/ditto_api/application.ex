@@ -1,6 +1,6 @@
 defmodule DittoApi.Application do
   use Application
-  alias DittoKafka.KafkaUtil, as: KafkaUtil
+  alias DittoKafka.Broker, as: Broker
 
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
@@ -8,7 +8,7 @@ defmodule DittoApi.Application do
     import Supervisor.Spec
 
     # set kafka_ex brokers on application start
-    Application.put_env(:kafka_ex, :brokers, KafkaUtil.get_kafka_brokers())
+    Application.put_env(:kafka_ex, :brokers, Broker.get_brokers())
 
     # Define workers and child supervisors to be supervised
     children = [

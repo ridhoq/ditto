@@ -1,10 +1,10 @@
-defmodule KafkaUtilTest do
+defmodule BrokerTest do
   use ExUnit.Case
 
-  alias DittoKafka.KafkaUtil, as: KU
+  alias DittoKafka.Broker, as: Broker
 
   test "gets kafka broker from zookeeper" do
-    {:ok, brokers} = KU.get_kafka_brokers()
+    {:ok, brokers} = Broker.get_brokers()
 
     assert length(brokers) == 1
     

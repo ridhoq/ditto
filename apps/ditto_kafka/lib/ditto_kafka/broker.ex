@@ -1,6 +1,6 @@
-defmodule DittoKafka.KafkaUtil do
+defmodule DittoKafka.Broker do
   @moduledoc """
-  Documentation for DittoKafka.KafkaUtil
+  Documentation for DittoKafka.Broker
   """
 
   alias Zookeeper.Client, as: ZK
@@ -8,7 +8,7 @@ defmodule DittoKafka.KafkaUtil do
   @doc """
   Gets registered kafka brokers from zookeeper
   """
-  def get_kafka_brokers() do
+  def get_brokers() do
     zookeeper_host = Application.get_env(:ditto_kafka, :zookeeper_host)
     {:ok, pid} = ZK.start_link(zookeeper_host)
     brokers_path = "/brokers/ids"
