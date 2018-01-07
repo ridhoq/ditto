@@ -1,18 +1,20 @@
 defmodule DittoKafka.Topic do
   @moduledoc """
   Documentation for DittoKafka.Topic
+  Responsible for parsing kafka topics in the following format:
+  https://github.com/wurstmeister/kafka-docker#automatically-create-topics
   """
 
-  def get_topic() do
-    kafka_create_topics = Application.get_env(:ditto_kafka, :kafka_create_topics)
-    topic_name = String.split(kafka_create_topics, ":") |> hd
-    {:ok, topic_name}
+  def get_topic(topic_str) do
+    topic = String.split(topic_str, ":") |> hd
+    {:ok, topic}
   end
 
-  def get_partition_count() do
-    kafka_create_topics = Application.get_env(:ditto_kafka, :kafka_create_topics)
-    partition_count = String.split(kafka_create_topics, ":")[1] |> Integer.parse
-    {:ok, partition_count}
+  def get_partitions(topic_str) do
+    partitions = String.split(topic_str, ":")
+                 |> Enum.at(1)
+                 |> String.to_integer
+    {:ok, partitions}
   end
 
 end
