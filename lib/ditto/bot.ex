@@ -12,8 +12,6 @@ defmodule Ditto.Bot do
     if (has_ditto_been_invoked(split_msg, slack.me)) do
       command_with_args = tl(split_msg)
       command = hd(command_with_args) |> String.downcase
-      if !command do
-        return {:ok, state}
       args = tl(command_with_args)
       state =
         case command do
@@ -45,7 +43,7 @@ defmodule Ditto.Bot do
   def has_ditto_been_invoked(split_msg, ditto) do
     first_word = hd(split_msg)
     # we upcase here to ensure the user id will match since we downcased the message text earlier
-    String.upcase(first_word) == at(ditto.id) or first_word == ditto.name
+    length(split_msg) > 1 && (String.upcase(first_word) == at(ditto.id) or first_word == ditto.name)
   end
 
   def set_state() do
