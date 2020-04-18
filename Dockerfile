@@ -10,7 +10,6 @@ RUN mix local.hex --force && \
     mix local.rebar --force
 
 COPY mix.exs /home/ditto/mix.exs
-COPY mix.lock /home/ditto/mix.lock
 
 RUN mix deps.get
 
