@@ -1,0 +1,6 @@
+import os
+
+# COSMOS_ACCOUNT_URI = 'https://ditto.documents.azure.com:443'
+# COSMOS_ACCOUNT_KEY = 'a3XYWC4ZflA5WY43xf4NXD12LQVDVelvW4fvupmTikmFPulNF18rKqJDcfWVDyLP0cDJG2a0xtUB3FPRztQhHQ=='
+COSMOS_ACCOUNT_URI = os.environ['COSMOS_ACCOUNT_URI']
+COSMOS_ACCOUNT_KEY = os.environ['COSMOS_ACCOUNT_KEY']
