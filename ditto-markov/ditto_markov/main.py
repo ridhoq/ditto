@@ -22,7 +22,7 @@ cosmos_path = f'dbs/{database_id}/colls/{container_id}'
 # @austin
 # user = 'U03169VDW'
 # @rid
-# user = 'U0314Q64M'
+user = 'U0314Q64M'
 # @thomas
 # user = 'U031D6P73'
 # @matty
@@ -30,14 +30,13 @@ cosmos_path = f'dbs/{database_id}/colls/{container_id}'
 # @beej
 # user = 'U03JA1HKP'
 # @nickpray
-user = 'U09BC6LR5'
+# user = 'U09BC6LR5'
 
 query = f'SELECT * FROM events e where e.user = "{user}" and e.type = "message" order by e.ts desc'
 
 def main():
   messages = [ item["text"] for item in client.QueryItems(cosmos_path, query) ]
   newline_delimited_messages = "\n".join(messages)
-  # print(newline_delimited_messages)
 
   model = markovify.NewlineText(newline_delimited_messages)
   for i in range(20):
