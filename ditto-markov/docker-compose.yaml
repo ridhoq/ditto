@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  api:
+    build:
+      context: .
+      target: production
+    image: ridhoq/ditto/ditto-markov
+    env_file: .env
+    volumes:
+      - ./ditto_markov:/app/ditto_markov
+      - ./poetry.toml:/app/poetry.toml
+      - ./poetry.lock:/app/poetry.lock
+      - ./pyproject.toml:/app/pyproject.toml
+    command: ["poetry", "run", "start",]
