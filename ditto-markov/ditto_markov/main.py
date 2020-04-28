@@ -15,7 +15,7 @@ team_ayy_lmao_users = {
 
 def main():
   user = team_ayy_lmao_users['rid']
-  messages = [ item["text"] for item in cosmos.get_message_events_for_user(user) ]
+  messages = [item["text"] for item in cosmos.get_message_events_for_user(user)]
   newline_delimited_messages = "\n".join(messages)
 
   model = markovify.NewlineText(newline_delimited_messages)
