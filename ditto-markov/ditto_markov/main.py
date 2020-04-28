@@ -1,19 +1,6 @@
-import os
-import json
-
-import azure.cosmos.cosmos_client as cosmos_client
 import markovify
 
-# from config import COSMOS_ACCOUNT_URI, COSMOS_ACCOUNT_KEY
-
-COSMOS_ACCOUNT_URI = os.environ['COSMOS_ACCOUNT_URI']
-COSMOS_ACCOUNT_KEY = os.environ['COSMOS_ACCOUNT_KEY']
-
-client = cosmos_client.CosmosClient(COSMOS_ACCOUNT_URI, {'masterKey': COSMOS_ACCOUNT_KEY})
-
-database_id = 'team-ayy-lmao'
-container_id = 'slack-events'
-cosmos_path = f'dbs/{database_id}/colls/{container_id}'
+from .cosmos import cosmos
 
 # @d
 # user = 'U0316HMAS'
@@ -32,10 +19,8 @@ user = 'U0314Q64M'
 # @nickpray
 # user = 'U09BC6LR5'
 
-query = f'SELECT * FROM events e where e.user = "{user}" and e.type = "message" order by e.ts desc'
-
 def main():
-  messages = [ item["text"] for item in client.QueryItems(cosmos_path, query) ]
+  messages = [ item["text"] for item in cosmos.get_message_events_for_user(user) ]
   newline_delimited_messages = "\n".join(messages)
 
   model = markovify.NewlineText(newline_delimited_messages)
