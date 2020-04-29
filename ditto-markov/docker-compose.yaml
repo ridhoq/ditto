@@ -9,7 +9,6 @@ services:
     env_file: .env
     volumes:
       - ./ditto_markov:/app/ditto_markov
-      - ./poetry.toml:/app/poetry.toml
       - ./poetry.lock:/app/poetry.lock
       - ./pyproject.toml:/app/pyproject.toml
     command: ["poetry", "run", "start",]

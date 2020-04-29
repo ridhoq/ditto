@@ -125,3 +125,6 @@ ENV/
 .mypy_cache/
 
 .pytest_cache
+
+# vscode
+.vscode

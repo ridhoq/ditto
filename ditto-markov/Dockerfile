@@ -28,12 +28,10 @@ ENV PATH $HOME/.poetry/bin:$PATH
 
 COPY pyproject.toml poetry.lock ./
 RUN mkdir -p ditto_markov/ && touch ditto_markov/__init__.py
-# RUN poetry install --no-dev
+RUN poetry install --no-dev
 
 FROM base as production
 
 RUN apk del .build-deps
 
 COPY . .
-
-RUN poetry install
