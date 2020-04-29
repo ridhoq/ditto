@@ -1,7 +1,6 @@
 import sys
-import markovify
 
-from .cosmos import cosmos
+from .markov import get_model
 
 team_ayy_lmao_users = {
   'd': 'U0316HMAS',
@@ -11,15 +10,13 @@ team_ayy_lmao_users = {
   'thomas': 'U031D6P73',
   'matty': 'U03LTN7RH',
   'beej': 'U03JA1HKP',
-  'nickpray': 'U09BC6LR5'
+  'nickpray': 'U09BC6LR5',
+  'partypat': 'U22RC4XB2'
 }
 
 def main():
   user_name = sys.argv[1]
   user = team_ayy_lmao_users[user_name]
-  messages = [item["text"] for item in cosmos.get_message_events_for_user(user)]
-  newline_delimited_messages = "\n".join(messages)
-
-  model = markovify.NewlineText(newline_delimited_messages)
+  model = get_model(user)
   for i in range(20):
     print(model.make_sentence())
