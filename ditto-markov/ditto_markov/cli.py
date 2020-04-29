@@ -1,3 +1,4 @@
+import sys
 import markovify
 
 from .cosmos import cosmos
@@ -14,7 +15,8 @@ team_ayy_lmao_users = {
 }
 
 def main():
-  user = team_ayy_lmao_users['rid']
+  user_name = sys.argv[1]
+  user = team_ayy_lmao_users[user_name]
   messages = [item["text"] for item in cosmos.get_message_events_for_user(user)]
   newline_delimited_messages = "\n".join(messages)
 

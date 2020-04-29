@@ -5,7 +5,7 @@ description = ""
 authors = ["Ridwan Hoq <ridwanhoq@gmail.com>"]
 
 [tool.poetry.scripts]
-start = "ditto_markov.main:main"
+cli = "ditto_markov.cli:main"
 
 [tool.poetry.dependencies]
 python = "^3.7"

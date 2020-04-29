@@ -1,7 +1,7 @@
 version: '3.7'
 
 services:
-  api:
+  cli:
     build:
       context: .
       target: production
@@ -11,4 +11,4 @@ services:
       - ./ditto_markov:/app/ditto_markov
       - ./poetry.lock:/app/poetry.lock
       - ./pyproject.toml:/app/pyproject.toml
-    command: ["poetry", "run", "start",]
+    entrypoint: ["poetry", "run", "cli",]
