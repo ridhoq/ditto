@@ -35,3 +35,7 @@ FROM base as production
 RUN apk del .build-deps
 
 COPY . .
+
+FROM base as development
+
+RUN $HOME/.poetry/bin/poetry install
