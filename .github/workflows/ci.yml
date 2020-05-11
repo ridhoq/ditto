@@ -19,4 +19,6 @@ jobs:
         cp .env.example .env
         docker-compose build
     - name: Run the tests
-      run: docker-compose run test
+      run: |
+        cd ditto-markov
+        docker-compose run test
