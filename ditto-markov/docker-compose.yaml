@@ -27,9 +27,8 @@ services:
       target: development
     image: ridhoq/ditto/ditto-markov/test
     environment:
-      COSMOS_ACCOUNT_URI: https://cosmosdb:3000/
+      COSMOS_ACCOUNT_URI: https://cosmosdb:3000
       COSMOS_DATABASE_ID: ditto-test
-      COSMOS_ACCOUNT_KEY: ''
       COSMOS_ENABLE_TLS: "False"
     volumes:
       - ./ditto_markov:/app/ditto_markov
