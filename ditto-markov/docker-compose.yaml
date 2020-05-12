@@ -29,7 +29,7 @@ services:
     environment:
       COSMOS_ACCOUNT_URI: https://cosmosdb:3000
       COSMOS_DATABASE_ID: ditto-test
-      COSMOS_ENABLE_TLS: "False"
+      COSMOS_ENABLE_TLS: "false"
     volumes:
       - ./ditto_markov:/app/ditto_markov
       - ./tests:/app/tests

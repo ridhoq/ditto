@@ -10,10 +10,10 @@ events_container_id = 'slack-events'
 
 class DittoCosmos:
     def __init__(self, cosmos_account_uri, cosmos_account_key, cosmos_database_id, cosmos_enable_tls=True):
+        print(f"cosmos_enable_tls: {cosmos_enable_tls}")
         connection_policy = documents.ConnectionPolicy()
         connection_policy.SSLConfiguration = documents.SSLConfiguration()
-        connection_policy.RetryOptions = RetryOptions(max_retry_attempt_count=19, fixed_retry_interval_in_milliseconds=None, max_wait_time_in_seconds=1000)
-        if cosmos_enable_tls:
+        if not cosmos_enable_tls:
             urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
             connection_policy.SSLConfiguration.SSLCaCerts = False
         self.cosmos = cosmos_client.CosmosClient(cosmos_account_uri, {'masterKey': cosmos_account_key},
