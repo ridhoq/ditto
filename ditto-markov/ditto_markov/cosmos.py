@@ -15,10 +15,8 @@ class DittoCosmos:
         connection_policy.SSLConfiguration = documents.SSLConfiguration()
         connection_policy.ConnectionRetryConfiguration = Retry(
             total=5,
-            read=5,
             connect=5,
-            backoff_factor=0.3,
-            status_forcelist=(500, 502, 504)
+            backoff_factor=0.1,
         )
         if not cosmos_enable_tls:
             urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
