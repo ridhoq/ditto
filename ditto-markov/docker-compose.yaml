@@ -31,6 +31,7 @@ services:
       COSMOS_DATABASE_ID: ditto-test
       COSMOS_DISABLE_TLS: "True"
     volumes:
+      - ./pytest.ini:/app/pytest.ini
       - ./ditto_markov:/app/ditto_markov
       - ./tests:/app/tests
       - ./poetry.lock:/app/poetry.lock
