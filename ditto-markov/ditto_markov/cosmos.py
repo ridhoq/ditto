@@ -30,7 +30,7 @@ class DittoCosmos:
     def get_message_events_for_user(self, user):
         query = """
       SELECT * 
-      FROM events e
+      FROM events e      
       WHERE e.user = @user
       AND e.type = "message"
       ORDER BY e.ts DESC
