@@ -34,3 +34,9 @@ def test_can_set_from_cache_repo():
     repo["woah"] = "dude"
     assert "woah" in repo
     assert repo["woah"] == "dude"
+
+
+def test_get_from_cache_updates_prior_caches():
+    assert repo["ping"] == "pong"
+    assert cache_2["ping"] == "pong"
+    assert cache_1["ping"] == "pong"

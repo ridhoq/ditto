@@ -1,5 +1,7 @@
 from abc import ABC, abstractmethod
-from typing import List
+from typing import List, Union
+
+import cachetools
 
 
 class Cache(ABC):
@@ -16,19 +18,26 @@ class Cache(ABC):
         raise NotImplementedError
 
 
+Backend = Union[Cache, cachetools.Cache]
+
+
 class CacheRepository(Cache):
-    caches: List[Cache]
+    caches: List[Backend]
 
     def __init__(self):
         self.caches = []
 
-    def register_backend(self, cache: Cache):
-        self.caches.append(cache)
+    def register_backend(self, backend: Backend):
+        self.caches.append(backend)
 
     def __getitem__(self, key):
-        for cache in self.caches:
+        for idx, cache in enumerate(self.caches):
             if key in cache:
-                return cache[key]
+                value = cache[key]
+                # cache this value in prior caches for faster access
+                for prior_cache in self.caches[0:idx]:
+                    prior_cache[key] = value
+                return value
             else:
                 pass
         raise KeyError

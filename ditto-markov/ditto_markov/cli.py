@@ -1,4 +1,5 @@
 import sys
+from cachetools import LFUCache
 
 from .cache import CacheRepository, BlobCache
 from .markov import get_model
@@ -17,13 +18,14 @@ team_ayy_lmao_users = {
 
 
 def main():
+    cache_repo = CacheRepository()
+    blob_backend = BlobCache()
+    lfu_backend = LFUCache(maxsize=5)
+    cache_repo.register_backend(lfu_backend)
+    cache_repo.register_backend(blob_backend)
+
     for user_name in sys.argv[1:]:
         user = team_ayy_lmao_users[user_name]
-
-        cache_repo = CacheRepository()
-        blob_backend = BlobCache()
-        cache_repo.register_backend(blob_backend)
-
         model = get_model(user, cache_repo)
         for i in range(20):
             print(model.make_sentence())
