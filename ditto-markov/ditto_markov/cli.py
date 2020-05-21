@@ -21,8 +21,8 @@ def main():
     cache_repo = CacheRepository()
     blob_backend = BlobCache()
     lfu_backend = LFUCache(maxsize=5)
-    cache_repo.register_backend(lfu_backend)
-    cache_repo.register_backend(blob_backend)
+    cache_repo.register_cache("lfu", lfu_backend)
+    cache_repo.register_cache("blob", blob_backend)
 
     for user_name in sys.argv[1:]:
         user = team_ayy_lmao_users[user_name]

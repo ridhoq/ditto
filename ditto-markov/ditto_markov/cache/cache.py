@@ -1,4 +1,6 @@
 from abc import ABC, abstractmethod
+from collections import OrderedDict
+import typing
 from typing import List, Union
 
 import cachetools
@@ -18,24 +20,28 @@ class Cache(ABC):
         raise NotImplementedError
 
 
-Backend = Union[Cache, cachetools.Cache]
+RegisterableCache = Union[Cache, cachetools.Cache]
 
 
 class CacheRepository(Cache):
-    caches: List[Backend]
-
+    caches: typing.OrderedDict[str, RegisterableCache]
+    
     def __init__(self):
-        self.caches = []
+        self.caches = OrderedDict()
 
-    def register_backend(self, backend: Backend):
-        self.caches.append(backend)
+    def register_cache(self, name: str, cache: RegisterableCache):
+        self.caches[name] = cache
+    
+    def get_caches(self):
+        return list(self.caches.values())
 
     def __getitem__(self, key):
-        for idx, cache in enumerate(self.caches):
+        for idx, cache in enumerate(self.get_caches()):
+            # name, cache = item
             if key in cache:
                 value = cache[key]
                 # cache this value in prior caches for faster access
-                for prior_cache in self.caches[0:idx]:
+                for prior_cache in self.get_caches()[0:idx]:
                     prior_cache[key] = value
                 return value
             else:
@@ -43,11 +49,11 @@ class CacheRepository(Cache):
         raise KeyError
 
     def __setitem__(self, key, value):
-        for cache in self.caches:
+        for cache in self.get_caches():
             cache[key] = value
 
     def __contains__(self, key):
-        for cache in self.caches:
+        for cache in self.get_caches():
             if key in cache:
                 return True
 

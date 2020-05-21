@@ -10,9 +10,9 @@ cache_1["ayy"] = "lmao"
 cache_2["yee"] = "haw"
 cache_3["ping"] = "pong"
 repo = CacheRepository()
-repo.register_backend(cache_1)
-repo.register_backend(cache_2)
-repo.register_backend(cache_3)
+repo.register_cache("cache_1", cache_1)
+repo.register_cache("cache_2", cache_2)
+repo.register_cache("cache_3", cache_3)
 
 
 def test_can_get_from_cache_repo():
