@@ -1,3 +1,5 @@
+import pytest
+
 from ditto_markov.cache.simple import SimpleCache
 
 
@@ -5,6 +7,8 @@ def test_get():
     cache = SimpleCache()
     cache._cache["ayy"] = "lmao"
     assert cache["ayy"] == "lmao"
+    with pytest.raises(KeyError):
+        return cache["nah"]
 
 
 def test_set():
