@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from typing import List
 
 
 class Cache(ABC):
@@ -15,8 +16,8 @@ class Cache(ABC):
         raise NotImplementedError
 
 
-class CacheRepository:
-    caches: list[Cache]
+class CacheRepository(Cache):
+    caches: List[Cache]
 
     def __init__(self):
         self.caches = []
