@@ -19,15 +19,12 @@ class BlobCache(Cache):
     def __getitem__(self, key):
         try:
             blob_client = self._blob_service_client.get_blob_client(container=self.container, blob=key)
-            print(f"blob cache hit for {key}")
             return blob_client.download_blob().readall()
         except ResourceNotFoundError:
-            print(f"blob cache miss for {key}")
             raise KeyError
 
     def __setitem__(self, key, value):
         blob_client = self._blob_service_client.get_blob_client(container=self.container, blob=key)
-        print(f"setting blob cache for {key}")
         blob_client.upload_blob(value, overwrite=True)
 
     def __contains__(self, key):

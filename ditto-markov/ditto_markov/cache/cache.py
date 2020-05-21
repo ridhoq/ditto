@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from collections import OrderedDict
 import typing
-from typing import List, Union
+from typing import Union
 
 import cachetools
 
@@ -25,21 +25,23 @@ RegisterableCache = Union[Cache, cachetools.Cache]
 
 class CacheRepository(Cache):
     caches: typing.OrderedDict[str, RegisterableCache]
-    
+
     def __init__(self):
         self.caches = OrderedDict()
 
     def register_cache(self, name: str, cache: RegisterableCache):
         self.caches[name] = cache
-    
+
     def get_caches(self):
         return list(self.caches.values())
 
     def __getitem__(self, key):
-        for idx, cache in enumerate(self.get_caches()):
-            # name, cache = item
+        for idx, item in enumerate(self.caches.items()):
+            name, cache = item
             if key in cache:
+                print(f"==================== {name} cache hit for {key} ====================")
                 value = cache[key]
+
                 # cache this value in prior caches for faster access
                 for prior_cache in self.get_caches()[0:idx]:
                     prior_cache[key] = value
