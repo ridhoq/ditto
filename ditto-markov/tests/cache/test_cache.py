@@ -1,7 +1,7 @@
 import pytest
 
-from ditto_markov.cache.cache import CacheRepository
-from ditto_markov.cache.simple import SimpleCache
+from ditto_markov.cache import CacheRepository
+from ditto_markov.cache import SimpleCache
 
 cache_1 = SimpleCache()
 cache_2 = SimpleCache()

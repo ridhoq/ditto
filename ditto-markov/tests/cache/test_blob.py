@@ -1,6 +1,6 @@
 import pytest
 
-from ditto_markov.cache.blob import BlobCache
+from ditto_markov.cache import BlobCache
 
 
 def test_init():

@@ -1,6 +1,6 @@
 import pytest
 
-from ditto_markov.cache.simple import SimpleCache
+from ditto_markov.cache import SimpleCache
 
 
 def test_get():
