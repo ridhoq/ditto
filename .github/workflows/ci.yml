@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: |
+        cd ditto-markov
+        cp .env.example .env
+        docker-compose build
+    - name: Run the tests
+      run: |
+        cd ditto-markov
+        docker-compose run test

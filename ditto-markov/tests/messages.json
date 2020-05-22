@@ -1,0 +1,592 @@
+[
+  {
+    "type": "message",
+    "text": "I thought the point of this chan was to help each other achieve",
+    "user": "U08SU1ERJ",
+    "ts": "1467727820.000399",
+    "team": "T03169VDQ",
+    "user_team": "T03169VDQ",
+    "source_team": "T03169VDQ",
+    "user_profile": {
+      "avatar_hash": "8f5ac94bc462",
+      "image_72": "https:\/\/avatars.slack-edge.com\/2017-03-18\/156304563394_8f5ac94bc46208648f74_72.png",
+      "first_name": "Will",
+      "real_name": "Will Nash",
+      "display_name": "nash",
+      "team": "T03169VDQ",
+      "name": "nash",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    }
+  },
+  {
+    "type": "message",
+    "text": "#selfish",
+    "user": "U08SU1ERJ",
+    "ts": "1467727831.000400",
+    "team": "T03169VDQ",
+    "user_team": "T03169VDQ",
+    "source_team": "T03169VDQ",
+    "user_profile": {
+      "avatar_hash": "8f5ac94bc462",
+      "image_72": "https:\/\/avatars.slack-edge.com\/2017-03-18\/156304563394_8f5ac94bc46208648f74_72.png",
+      "first_name": "Will",
+      "real_name": "Will Nash",
+      "display_name": "nash",
+      "team": "T03169VDQ",
+      "name": "nash",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    }
+  },
+  {
+    "type": "message",
+    "text": "<https:\/\/i.imgur.com\/ERqY3Sx.png>",
+    "user": "U0314Q64M",
+    "ts": "1467730333.000401",
+    "team": "T03169VDQ",
+    "user_team": "T03169VDQ",
+    "source_team": "T03169VDQ",
+    "user_profile": {
+      "avatar_hash": "978ca407aec0",
+      "image_72": "https:\/\/avatars.slack-edge.com\/2019-06-30\/680241566308_978ca407aec0b6f564f7_72.png",
+      "first_name": "Ridwan",
+      "real_name": "Ridwan Hoq",
+      "display_name": "rid",
+      "team": "T03169VDQ",
+      "name": "rid",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    },
+    "attachments": [
+      {
+        "fallback": "839x382px image",
+        "image_url": "https:\/\/i.imgur.com\/ERqY3Sx.png",
+        "image_width": 839,
+        "image_height": 382,
+        "image_bytes": 25571,
+        "from_url": "https:\/\/i.imgur.com\/ERqY3Sx.png",
+        "id": 1
+      }
+    ]
+  },
+  {
+    "type": "message",
+    "text": "post weekend goals status",
+    "user": "U0314Q64M",
+    "ts": "1467730370.000403",
+    "team": "T03169VDQ",
+    "user_team": "T03169VDQ",
+    "source_team": "T03169VDQ",
+    "user_profile": {
+      "avatar_hash": "978ca407aec0",
+      "image_72": "https:\/\/avatars.slack-edge.com\/2019-06-30\/680241566308_978ca407aec0b6f564f7_72.png",
+      "first_name": "Ridwan",
+      "real_name": "Ridwan Hoq",
+      "display_name": "rid",
+      "team": "T03169VDQ",
+      "name": "rid",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    }
+  },
+  {
+    "type": "message",
+    "text": "Fuck I need a haircut ",
+    "user": "U09BC6LR5",
+    "ts": "1467730649.000404",
+    "team": "T03169VDQ",
+    "user_team": "T03169VDQ",
+    "source_team": "T03169VDQ",
+    "user_profile": {
+      "avatar_hash": "2b8891775f98",
+      "image_72": "https:\/\/avatars.slack-edge.com\/2017-02-13\/140894660885_2b8891775f98188bff7f_72.jpg",
+      "first_name": "Nick",
+      "real_name": "Nick pray",
+      "display_name": "nickpray",
+      "team": "T03169VDQ",
+      "name": "nickpray",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    }
+  },
+  {
+    "type": "message",
+    "text": "<@U08SU1ERJ>: rofl exactly",
+    "user": "U03169VDW",
+    "ts": "1467732472.000405",
+    "team": "T03169VDQ",
+    "user_team": "T03169VDQ",
+    "source_team": "T03169VDQ",
+    "user_profile": {
+      "avatar_hash": "25608587beac",
+      "image_72": "https:\/\/avatars.slack-edge.com\/2019-03-12\/573939509429_25608587beac6c21ea6d_72.png",
+      "first_name": "Austin",
+      "real_name": "Austin Pray",
+      "display_name": "austin",
+      "team": "T03169VDQ",
+      "name": "austin",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    }
+  },
+  {
+    "type": "message",
+    "text": "",
+    "files": [
+      {
+        "id": "F1NU5B6DT",
+        "mode": "hidden_by_limit"
+      }
+    ],
+    "upload": true,
+    "user": "U03169VDW",
+    "display_as_bot": false,
+    "ts": "1467732573.000406"
+  },
+  {
+    "type": "message",
+    "text": "dang rid u did a lot of goals over the weekend huh........ :unamused:",
+    "user": "U03JA1HKP",
+    "ts": "1467734312.000407",
+    "team": "T03169VDQ",
+    "user_team": "T03169VDQ",
+    "source_team": "T03169VDQ",
+    "user_profile": {
+      "avatar_hash": "a73ceeb6db5c",
+      "image_72": "https:\/\/avatars.slack-edge.com\/2018-11-13\/477524015697_a73ceeb6db5c3297d621_72.png",
+      "first_name": "Brie",
+      "real_name": "Brie",
+      "display_name": "beej",
+      "team": "T03169VDQ",
+      "name": "beej",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    }
+  },
+  {
+    "type": "message",
+    "text": "yea it was a 50\/50 split of fun and goals",
+    "user": "U0314Q64M",
+    "ts": "1467734660.000408",
+    "team": "T03169VDQ",
+    "user_team": "T03169VDQ",
+    "source_team": "T03169VDQ",
+    "user_profile": {
+      "avatar_hash": "978ca407aec0",
+      "image_72": "https:\/\/avatars.slack-edge.com\/2019-06-30\/680241566308_978ca407aec0b6f564f7_72.png",
+      "first_name": "Ridwan",
+      "real_name": "Ridwan Hoq",
+      "display_name": "rid",
+      "team": "T03169VDQ",
+      "name": "rid",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    }
+  },
+  {
+    "type": "message",
+    "text": "pretty gud distrib",
+    "user": "U0314Q64M",
+    "ts": "1467734668.000409",
+    "team": "T03169VDQ",
+    "user_team": "T03169VDQ",
+    "source_team": "T03169VDQ",
+    "user_profile": {
+      "avatar_hash": "978ca407aec0",
+      "image_72": "https:\/\/avatars.slack-edge.com\/2019-06-30\/680241566308_978ca407aec0b6f564f7_72.png",
+      "first_name": "Ridwan",
+      "real_name": "Ridwan Hoq",
+      "display_name": "rid",
+      "team": "T03169VDQ",
+      "name": "rid",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    }
+  },
+  {
+    "type": "message",
+    "text": " I just ate my daily Tendies ",
+    "user": "U03169VDW",
+    "ts": "1467751094.000410",
+    "team": "T03169VDQ",
+    "user_team": "T03169VDQ",
+    "source_team": "T03169VDQ",
+    "user_profile": {
+      "avatar_hash": "25608587beac",
+      "image_72": "https:\/\/avatars.slack-edge.com\/2019-03-12\/573939509429_25608587beac6c21ea6d_72.png",
+      "first_name": "Austin",
+      "real_name": "Austin Pray",
+      "display_name": "austin",
+      "team": "T03169VDQ",
+      "name": "austin",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    }
+  },
+  {
+    "type": "message",
+    "text": "you should, like... eat better",
+    "user": "U08SU1ERJ",
+    "ts": "1467751378.000411",
+    "team": "T03169VDQ",
+    "user_team": "T03169VDQ",
+    "source_team": "T03169VDQ",
+    "user_profile": {
+      "avatar_hash": "8f5ac94bc462",
+      "image_72": "https:\/\/avatars.slack-edge.com\/2017-03-18\/156304563394_8f5ac94bc46208648f74_72.png",
+      "first_name": "Will",
+      "real_name": "Will Nash",
+      "display_name": "nash",
+      "team": "T03169VDQ",
+      "name": "nash",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    }
+  },
+  {
+    "type": "message",
+    "text": "I eat rely wel",
+    "user": "U03169VDW",
+    "ts": "1467751512.000412",
+    "team": "T03169VDQ",
+    "user_team": "T03169VDQ",
+    "source_team": "T03169VDQ",
+    "user_profile": {
+      "avatar_hash": "25608587beac",
+      "image_72": "https:\/\/avatars.slack-edge.com\/2019-03-12\/573939509429_25608587beac6c21ea6d_72.png",
+      "first_name": "Austin",
+      "real_name": "Austin Pray",
+      "display_name": "austin",
+      "team": "T03169VDQ",
+      "name": "austin",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    }
+  },
+  {
+    "type": "message",
+    "text": "Worst thing I do is drink",
+    "user": "U03169VDW",
+    "ts": "1467751524.000413",
+    "team": "T03169VDQ",
+    "user_team": "T03169VDQ",
+    "source_team": "T03169VDQ",
+    "user_profile": {
+      "avatar_hash": "25608587beac",
+      "image_72": "https:\/\/avatars.slack-edge.com\/2019-03-12\/573939509429_25608587beac6c21ea6d_72.png",
+      "first_name": "Austin",
+      "real_name": "Austin Pray",
+      "display_name": "austin",
+      "team": "T03169VDQ",
+      "name": "austin",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    }
+  },
+  {
+    "type": "message",
+    "text": "my daily intake right now is like 300 calories",
+    "user": "U03JA1HKP",
+    "ts": "1467751627.000414",
+    "team": "T03169VDQ",
+    "user_team": "T03169VDQ",
+    "source_team": "T03169VDQ",
+    "user_profile": {
+      "avatar_hash": "a73ceeb6db5c",
+      "image_72": "https:\/\/avatars.slack-edge.com\/2018-11-13\/477524015697_a73ceeb6db5c3297d621_72.png",
+      "first_name": "Brie",
+      "real_name": "Brie",
+      "display_name": "beej",
+      "team": "T03169VDQ",
+      "name": "beej",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    }
+  },
+  {
+    "type": "message",
+    "text": "i need to go shopping",
+    "user": "U03JA1HKP",
+    "ts": "1467751632.000415",
+    "team": "T03169VDQ",
+    "user_team": "T03169VDQ",
+    "source_team": "T03169VDQ",
+    "user_profile": {
+      "avatar_hash": "a73ceeb6db5c",
+      "image_72": "https:\/\/avatars.slack-edge.com\/2018-11-13\/477524015697_a73ceeb6db5c3297d621_72.png",
+      "first_name": "Brie",
+      "real_name": "Brie",
+      "display_name": "beej",
+      "team": "T03169VDQ",
+      "name": "beej",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    }
+  },
+  {
+    "type": "message",
+    "text": "I just finished a dietary analysis project for my nutrition class",
+    "user": "U03LTN7RH",
+    "ts": "1467753537.000416",
+    "team": "T03169VDQ",
+    "user_team": "T03169VDQ",
+    "source_team": "T03169VDQ",
+    "user_profile": {
+      "avatar_hash": "a6dba2ff72b6",
+      "image_72": "https:\/\/avatars.slack-edge.com\/2015-10-10\/12273478182_a6dba2ff72b6d5091049_72.jpg",
+      "first_name": "Matt",
+      "real_name": "Matt Morgan",
+      "display_name": "matty",
+      "team": "T03169VDQ",
+      "name": "matty",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    }
+  },
+  {
+    "type": "message",
+    "text": "Turns out my diet is shit",
+    "user": "U03LTN7RH",
+    "ts": "1467753545.000417",
+    "team": "T03169VDQ",
+    "user_team": "T03169VDQ",
+    "source_team": "T03169VDQ",
+    "user_profile": {
+      "avatar_hash": "a6dba2ff72b6",
+      "image_72": "https:\/\/avatars.slack-edge.com\/2015-10-10\/12273478182_a6dba2ff72b6d5091049_72.jpg",
+      "first_name": "Matt",
+      "real_name": "Matt Morgan",
+      "display_name": "matty",
+      "team": "T03169VDQ",
+      "name": "matty",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    }
+  },
+  {
+    "type": "message",
+    "text": "<@U04EQPCC8>: balance",
+    "user": "U03LTN7RH",
+    "ts": "1467753557.000418",
+    "team": "T03169VDQ",
+    "user_team": "T03169VDQ",
+    "source_team": "T03169VDQ",
+    "user_profile": {
+      "avatar_hash": "a6dba2ff72b6",
+      "image_72": "https:\/\/avatars.slack-edge.com\/2015-10-10\/12273478182_a6dba2ff72b6d5091049_72.jpg",
+      "first_name": "Matt",
+      "real_name": "Matt Morgan",
+      "display_name": "matty",
+      "team": "T03169VDQ",
+      "name": "matty",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    }
+  },
+  {
+    "type": "message",
+    "text": "<@U03LTN7RH>: you have 329.0552773 kkreds",
+    "user": "U04EQPCC8",
+    "ts": "1467753557.000419",
+    "team": "T03169VDQ",
+    "user_team": "T03169VDQ",
+    "source_team": "T03169VDQ",
+    "user_profile": {
+      "avatar_hash": "2535f7793e71",
+      "image_72": "https:\/\/avatars.slack-edge.com\/2017-11-15\/273766341398_2535f7793e71095001f4_72.jpg",
+      "first_name": "Molly",
+      "real_name": "Molly",
+      "display_name": "molly",
+      "team": "T03169VDQ",
+      "name": "molly",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    }
+  },
+  {
+    "type": "message",
+    "text": "<@U09BC6LR5>: helping me with diet soon tho",
+    "user": "U03LTN7RH",
+    "ts": "1467753573.000420",
+    "team": "T03169VDQ",
+    "user_team": "T03169VDQ",
+    "source_team": "T03169VDQ",
+    "user_profile": {
+      "avatar_hash": "a6dba2ff72b6",
+      "image_72": "https:\/\/avatars.slack-edge.com\/2015-10-10\/12273478182_a6dba2ff72b6d5091049_72.jpg",
+      "first_name": "Matt",
+      "real_name": "Matt Morgan",
+      "display_name": "matty",
+      "team": "T03169VDQ",
+      "name": "matty",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    }
+  },
+  {
+    "type": "message",
+    "text": "Need pass classes this week",
+    "user": "U03LTN7RH",
+    "ts": "1467753587.000421",
+    "team": "T03169VDQ",
+    "user_team": "T03169VDQ",
+    "source_team": "T03169VDQ",
+    "user_profile": {
+      "avatar_hash": "a6dba2ff72b6",
+      "image_72": "https:\/\/avatars.slack-edge.com\/2015-10-10\/12273478182_a6dba2ff72b6d5091049_72.jpg",
+      "first_name": "Matt",
+      "real_name": "Matt Morgan",
+      "display_name": "matty",
+      "team": "T03169VDQ",
+      "name": "matty",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    }
+  },
+  {
+    "type": "message",
+    "text": "Only goals that matter",
+    "user": "U03LTN7RH",
+    "ts": "1467753592.000422",
+    "team": "T03169VDQ",
+    "user_team": "T03169VDQ",
+    "source_team": "T03169VDQ",
+    "user_profile": {
+      "avatar_hash": "a6dba2ff72b6",
+      "image_72": "https:\/\/avatars.slack-edge.com\/2015-10-10\/12273478182_a6dba2ff72b6d5091049_72.jpg",
+      "first_name": "Matt",
+      "real_name": "Matt Morgan",
+      "display_name": "matty",
+      "team": "T03169VDQ",
+      "name": "matty",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    }
+  },
+  {
+    "type": "message",
+    "text": ":watermelon:",
+    "user": "U03LTN7RH",
+    "ts": "1467753602.000423",
+    "team": "T03169VDQ",
+    "user_team": "T03169VDQ",
+    "source_team": "T03169VDQ",
+    "user_profile": {
+      "avatar_hash": "a6dba2ff72b6",
+      "image_72": "https:\/\/avatars.slack-edge.com\/2015-10-10\/12273478182_a6dba2ff72b6d5091049_72.jpg",
+      "first_name": "Matt",
+      "real_name": "Matt Morgan",
+      "display_name": "matty",
+      "team": "T03169VDQ",
+      "name": "matty",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    }
+  },
+  {
+    "type": "message",
+    "text": "<@U03LTN7RH>: successfully mined 1 kkred",
+    "user": "U04EQPCC8",
+    "ts": "1467753602.000424",
+    "team": "T03169VDQ",
+    "user_team": "T03169VDQ",
+    "source_team": "T03169VDQ",
+    "user_profile": {
+      "avatar_hash": "2535f7793e71",
+      "image_72": "https:\/\/avatars.slack-edge.com\/2017-11-15\/273766341398_2535f7793e71095001f4_72.jpg",
+      "first_name": "Molly",
+      "real_name": "Molly",
+      "display_name": "molly",
+      "team": "T03169VDQ",
+      "name": "molly",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    }
+  },
+  {
+    "type": "message",
+    "text": "Yee",
+    "user": "U09BC6LR5",
+    "ts": "1467754017.000425",
+    "team": "T03169VDQ",
+    "user_team": "T03169VDQ",
+    "source_team": "T03169VDQ",
+    "user_profile": {
+      "avatar_hash": "2b8891775f98",
+      "image_72": "https:\/\/avatars.slack-edge.com\/2017-02-13\/140894660885_2b8891775f98188bff7f_72.jpg",
+      "first_name": "Nick",
+      "real_name": "Nick pray",
+      "display_name": "nickpray",
+      "team": "T03169VDQ",
+      "name": "nickpray",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    }
+  },
+  {
+    "type": "message",
+    "text": "<http:\/\/i.imgur.com\/hzef6QI.jpg>",
+    "user": "USLACKBOT",
+    "ts": "1467754017.000426",
+    "team": "T03169VDQ",
+    "user_team": "T03169VDQ",
+    "source_team": "T03169VDQ",
+    "user_profile": {
+      "avatar_hash": "sv41d8cd98f0",
+      "image_72": "https:\/\/a.slack-edge.com\/80588\/img\/slackbot_72.png",
+      "first_name": "slackbot",
+      "real_name": "Slackbot",
+      "display_name": "Slackbot",
+      "team": "T03169VDQ",
+      "name": "slackbot",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    },
+    "attachments": [
+      {
+        "fallback": "509x429px image",
+        "image_url": "http:\/\/i.imgur.com\/hzef6QI.jpg",
+        "image_width": 509,
+        "image_height": 429,
+        "image_bytes": 39704,
+        "from_url": "http:\/\/i.imgur.com\/hzef6QI.jpg",
+        "id": 1
+      }
+    ]
+  },
+  {
+    "type": "message",
+    "text": "",
+    "files": [
+      {
+        "id": "F1P2E5A2C",
+        "mode": "hidden_by_limit"
+      }
+    ],
+    "upload": true,
+    "user": "U03JA1HKP",
+    "display_as_bot": false,
+    "ts": "1467754555.000428"
+  },
+  {
+    "type": "message",
+    "text": "also to take a shower",
+    "user": "U03JA1HKP",
+    "ts": "1467754556.000429",
+    "team": "T03169VDQ",
+    "user_team": "T03169VDQ",
+    "source_team": "T03169VDQ",
+    "user_profile": {
+      "avatar_hash": "a73ceeb6db5c",
+      "image_72": "https:\/\/avatars.slack-edge.com\/2018-11-13\/477524015697_a73ceeb6db5c3297d621_72.png",
+      "first_name": "Brie",
+      "real_name": "Brie",
+      "display_name": "beej",
+      "team": "T03169VDQ",
+      "name": "beej",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    }
+  }
+]

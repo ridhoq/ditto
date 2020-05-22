@@ -12,3 +12,28 @@ services:
       - ./poetry.lock:/app/poetry.lock
       - ./pyproject.toml:/app/pyproject.toml
     entrypoint: ["poetry", "run", "cli",]
+
+  cosmosdb:
+    image: ridhoq/cosmosdb-server:0.7.0
+    command: ["-p", "3000"]
+    ports:
+    - 3000
+    
+  test:
+    depends_on:
+      - cosmosdb
+    build:
+      context: .
+      target: development
+    image: ridhoq/ditto/ditto-markov/test
+    environment:
+      COSMOS_ACCOUNT_URI: https://cosmosdb:3000
+      COSMOS_DATABASE_ID: ditto-test
+      COSMOS_DISABLE_TLS: "True"
+    volumes:
+      - ./pytest.ini:/app/pytest.ini
+      - ./ditto_markov:/app/ditto_markov
+      - ./tests:/app/tests
+      - ./poetry.lock:/app/poetry.lock
+      - ./pyproject.toml:/app/pyproject.toml
+    command: ["pytest"]
