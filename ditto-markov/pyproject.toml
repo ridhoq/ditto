@@ -12,6 +12,7 @@ python = "^3.7"
 azure-cosmos = "^3.1.2"
 markovify = "^0.8.0"
 azure-storage-blob = "^12.3.1"
+cachetools = "^4.1.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
