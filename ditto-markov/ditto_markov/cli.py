@@ -1,5 +1,6 @@
 import sys
 from cachetools import LFUCache
+from timeit import default_timer as timer
 
 from .cache import CacheRepository, BlobCache
 from .markov import get_model
@@ -29,5 +30,9 @@ def main():
     for user_name in sys.argv[1:]:
         user = team_ayy_lmao_users[user_name]
         model = get_model(user, cache_repo)
+        start = timer()
         for i in range(20):
             print(model.make_sentence())
+
+        end = timer()
+        print(f"{(end - start) * 1000} ms elapsed for sentence creation ")
