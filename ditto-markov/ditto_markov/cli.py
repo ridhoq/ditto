@@ -17,6 +17,9 @@ team_ayy_lmao_users = {
     'partypat': 'U22RC4XB2'
 }
 
+MAX_OVERLAP_RATIO = 0.5
+MAX_OVERLAP_TOTAL = 10
+
 
 def main():
     cache_repo = CacheRepository()
@@ -32,7 +35,9 @@ def main():
         model = get_model(user, cache_repo)
         start = timer()
         for i in range(20):
-            print(model.make_sentence())
+            print(model.make_sentence(max_overlap_ratio=MAX_OVERLAP_RATIO,
+                                      max_overlap_total=MAX_OVERLAP_TOTAL,
+                                      tries=1000))
 
         end = timer()
         print(f"{(end - start) * 1000} ms elapsed for sentence creation ")
