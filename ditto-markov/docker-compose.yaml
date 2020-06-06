@@ -28,6 +28,7 @@ services:
       - ./ditto_markov:/app/ditto_markov
       - ./poetry.lock:/app/poetry.lock
       - ./pyproject.toml:/app/pyproject.toml
+    entrypoint: ["/start-reload.sh"]
 
   cosmosdb:
     image: ridhoq/cosmosdb-server:0.7.0
