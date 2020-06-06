@@ -12,6 +12,22 @@ services:
       - ./poetry.lock:/app/poetry.lock
       - ./pyproject.toml:/app/pyproject.toml
     entrypoint: ["poetry", "run", "cli",]
+    
+  api:
+    build:
+      context: .
+      target: production
+    image: ridhoq/ditto/ditto-markov
+    env_file: .env
+    environment:
+      APP_MODULE: ditto_markov.api:api
+      PORT: 8888
+    ports:
+      - 8888:8888
+    volumes:
+      - ./ditto_markov:/app/ditto_markov
+      - ./poetry.lock:/app/poetry.lock
+      - ./pyproject.toml:/app/pyproject.toml
 
   cosmosdb:
     image: ridhoq/cosmosdb-server:0.7.0
