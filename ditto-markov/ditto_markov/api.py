@@ -18,4 +18,4 @@ cache_repo.register_cache("blob", blob_cache)
 @api.get("/transform/{user}")
 def get_transform(user):
     model = get_model(user, cache_repo)
-    return {user: model.make_sentence()}
+    return {user: [model.make_sentence() for _ in range(20)]}
