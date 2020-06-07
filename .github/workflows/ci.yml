@@ -31,7 +31,8 @@ jobs:
     with:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
-        repository: ditto.azurecr.io/ditto
+        registry: ditto.azurecr.io
+        repository: ditto
         tag_with_ref: true
         target: production
 #    - name: Push image to ACR
