@@ -33,8 +33,12 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
         registry: ditto.azurecr.io
         repository: ditto
+        dockerfile: ditto_markov/Dockerfile
+        path: ditto_markov/
         tag_with_ref: true
+        tag_with_sha: true
         target: production
+        push: ${{ github.ref == 'refs/pull/22/merge' }}
 #    - name: Push image to ACR
 #      if: github.ref == 'refs/pull/22/merge'
 #      run: |
