@@ -20,7 +20,6 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
     - name: Build the Docker image
       run: |
-        echo ${{github.ref}}
         cd ditto-markov
         cp .env.example .env
         docker-compose build
@@ -28,11 +27,17 @@ jobs:
       run: |
         cd ditto-markov
         docker-compose run test
-        echo ${{github.ref}}
-    - name: Push image to ACR
-      if: github.ref == 'refs/heads/api'
-      run: |
-        docker tag ridhoq/ditto/ditto-markov ditto.azurecr.io/ditto:${{github.ref}}-${{github.sha}}
-        docker tag ridhoq/ditto/ditto-markov ditto.azurecr.io/ditto:${{github.ref}}-latest
-        docker push ridhoq/ditto/ditto-markov ditto.azurecr.io/ditto:${{github.ref}}-${{github.sha}}
-        docker push ridhoq/ditto/ditto-markov ditto.azurecr.io/ditto:${{github.ref}}-latest
+    uses: docker/build-push-action@v1
+    with:
+        username: ${{ secrets.REGISTRY_USERNAME }}
+        password: ${{ secrets.REGISTRY_PASSWORD }}
+        repository: ditto.azurecr.io/ditto
+        tag_with_ref: true
+        target: production
+#    - name: Push image to ACR
+#      if: github.ref == 'refs/pull/22/merge'
+#      run: |
+#        docker tag ridhoq/ditto/ditto-markov ditto.azurecr.io/ditto:${{github.ref}}-${{github.sha}}
+#        docker tag ridhoq/ditto/ditto-markov ditto.azurecr.io/ditto:${{github.ref}}-latest
+#        docker push ridhoq/ditto/ditto-markov ditto.azurecr.io/ditto:${{github.ref}}-${{github.sha}}
+#        docker push ridhoq/ditto/ditto-markov ditto.azurecr.io/ditto:${{github.ref}}-latest
