@@ -27,8 +27,8 @@ jobs:
       run: |
         cd ditto-markov
         docker-compose run test
-    uses: docker/build-push-action@v1
-    with:
+    - uses: docker/build-push-action@v1
+      with:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
         registry: ditto.azurecr.io
