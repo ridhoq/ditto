@@ -1,4 +1,4 @@
-FROM python:3.7.3-alpine as base
+FROM tiangolo/uvicorn-gunicorn-fastapi:python3.7-alpine3.8 as base
 
 WORKDIR /app
 

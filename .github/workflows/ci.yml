@@ -13,6 +13,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - uses: azure/docker-login@v1
+      with:
+        login-server: ditto.azurecr.io
+        username: ${{ secrets.REGISTRY_USERNAME }}
+        password: ${{ secrets.REGISTRY_PASSWORD }}
     - name: Build the Docker image
       run: |
         cd ditto-markov
@@ -22,3 +27,22 @@ jobs:
       run: |
         cd ditto-markov
         docker-compose run test
+    - uses: docker/build-push-action@v1
+      with:
+        username: ${{ secrets.REGISTRY_USERNAME }}
+        password: ${{ secrets.REGISTRY_PASSWORD }}
+        registry: ditto.azurecr.io
+        repository: ditto
+        dockerfile: ditto-markov/Dockerfile
+        path: ditto-markov/
+        tag_with_ref: true
+        tag_with_sha: true
+        target: production
+        push: ${{ github.ref == 'refs/pull/22/merge' }}
+#    - name: Push image to ACR
+#      if: github.ref == 'refs/pull/22/merge'
+#      run: |
+#        docker tag ridhoq/ditto/ditto-markov ditto.azurecr.io/ditto:${{github.ref}}-${{github.sha}}
+#        docker tag ridhoq/ditto/ditto-markov ditto.azurecr.io/ditto:${{github.ref}}-latest
+#        docker push ridhoq/ditto/ditto-markov ditto.azurecr.io/ditto:${{github.ref}}-${{github.sha}}
+#        docker push ridhoq/ditto/ditto-markov ditto.azurecr.io/ditto:${{github.ref}}-latest
