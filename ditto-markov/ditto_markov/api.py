@@ -1,4 +1,6 @@
-from fastapi import FastAPI
+import sys
+
+from fastapi import FastAPI, HTTPException
 from cachetools import LFUCache
 
 from .cache import CacheRepository, BlobCache
@@ -17,5 +19,8 @@ cache_repo.register_cache("blob", blob_cache)
 
 @api.get("/transform/{user}")
 def get_transform(user):
-    model = get_model(user, cache_repo)
-    return {user: [model.make_sentence() for _ in range(20)]}
+    try:
+        model = get_model(user, cache_repo)
+        return {user: [model.make_sentence() for _ in range(20)]}
+    except KeyError:
+        raise HTTPException(status_code=404, detail="user not found")
