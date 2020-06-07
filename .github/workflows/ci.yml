@@ -33,8 +33,8 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
         registry: ditto.azurecr.io
         repository: ditto
-        dockerfile: ditto_markov/Dockerfile
-        path: ditto_markov/
+        dockerfile: ditto-markov/Dockerfile
+        path: ditto-markov/
         tag_with_ref: true
         tag_with_sha: true
         target: production
