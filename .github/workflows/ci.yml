@@ -20,6 +20,7 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
     - name: Build the Docker image
       run: |
+        echo ${{github.ref}}
         cd ditto-markov
         cp .env.example .env
         docker-compose build
@@ -27,6 +28,7 @@ jobs:
       run: |
         cd ditto-markov
         docker-compose run test
+        echo ${{github.ref}}
     - name: Push image to ACR
       if: github.ref == 'refs/heads/api'
       run: |
